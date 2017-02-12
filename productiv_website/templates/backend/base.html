@@ -3,8 +3,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Productiv -
+    {% block title %}
 
+    {% endblock %}
+    </title>
     <!-- Bootstrap Core CSS -->
     <link href="{% static "/css/bootstrap.css" %}" rel="stylesheet">
 
@@ -17,77 +20,39 @@
     <link href="{% static "/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
         <div class="navbar-header">
-          <a href="../" class="navbar-brand">Productiv</a>
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+            <a href="../" class="navbar-brand">Productiv</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
-          <ul class="nav navbar-nav">
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Help</a>
-            </li>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Help</a>
+                </li>
 
-          </ul>
+            </ul>
 
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="http://builtwithbootstrap.com/" target="_blank">Sign Up</a></li>
-            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Sign In</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url "login" %}">Sign In</a></li>
+            </ul>
 
         </div>
-      </div>
     </div>
+</div>
+
+{% block content %}
 
 
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-text">
-                        <span class="name">Productiv</span>
-                        <span class="skills">Augment your productivity, wither your wallet.</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row push">
-                <div class="col-lg-6 points">
-                    <p>
-                        <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
-                        </span>
-                        Increase your own productivity
-                    </p>
-                    <p>
-                        <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
-                        </span>
-                        Profiteer from the misfortune of others
-                    </p>
-                    <p>
-                        <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
-                        </span>
-                        Augment or decrement wealth based on performance.
-                    </p>
-                </div>
-                <div class="col-lg-6">
-                    <p>Some shit here</p>
-                </div>
-
-            </div>
-    </div>
-
+{% endblock %}
 <script src="{% static "/js/jquery-3.1.1.js" %}"></script>
 <script src="{% static "/js/bootstrap.min.js" %}"></script>
 </body>

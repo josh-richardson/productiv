@@ -1,0 +1,23 @@
+{% extends 'backend/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row push">
+            <div class="col-lg-12">
+                {% if user.is_authenticated %}
+                    <p>Logged in: </p>
+                {% else %}
+                    <p>Not authenticated</p>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

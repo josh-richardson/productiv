@@ -16,3 +16,17 @@
 .push {
     margin-top: 40px;
 }
+
+.form-control {
+    max-width: 88%;
+}
+
+.points {
+    margin-top: 50px;
+}
+
+.equi {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}

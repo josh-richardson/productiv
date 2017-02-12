@@ -1,0 +1,74 @@
+{% extends 'backend/base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="intro-text">
+                <span class="name">Productiv</span>
+                <span class="skills">Augment your productivity, wither your wallet.</span>
+            </div>
+        </div>
+    </div>
+    <div class="row push">
+        <div class="col-lg-6 points">
+            <p>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                Increase your own productivity
+            </p>
+            <p>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                Profiteer from the misfortune of others
+            </p>
+            <p>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                Augment or decrement wealth based on performance.
+            </p>
+                        <p>
+                        <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-check fa-stack-1x fa-inverse"></i>
+                        </span>
+                Integrated chrome extension for increased Orewellian-ness.
+            </p>
+        </div>
+        <div class="col-lg-6">
+            {% if registered %}
+                <div class="equi">
+
+                    <strong>Thank you for Signing Up!</strong>
+                    <a href="">Login</a>
+
+                </div>
+            {% else %}
+                <form id="user_form" method="post" action="{% url 'index' %}" enctype="multipart/form-data">
+
+                    {% csrf_token %}
+
+                    {{ user_form.as_p }}
+                    {{ profile_form.as_p }}
+
+                    <button class="btn btn-default" type="submit">Sign Up</button>
+
+                </form>
+
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}
