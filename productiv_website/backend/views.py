@@ -1,4 +1,5 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login, logout
+
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -7,7 +8,6 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse
-
 from backend.forms import UserForm
 
 
@@ -29,7 +29,7 @@ def index(request):
     return render(request, "backend/index.html", {'user_form': user_form, 'registered' : registered})
 
 
-def login(request):
+def login_user(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -38,8 +38,7 @@ def login(request):
 
         if user:
             if user.is_active:
-                request.session["username"] = username
-                request.session["password"] = password
+                login(request, user)
                 return HttpResponseRedirect(reverse('controlpanel'))
             else:
                 return render(request, "backend/login.html", {"error": "Account deactivated!!"})
