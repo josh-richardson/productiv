@@ -18,8 +18,9 @@ class Website(models.Model):
     def __str__(self):
         return self.user.username
 
+
 class UserWebsite(models.Model):
-    user =models.ForeignKey("UserProfile", on_delete=models.CASCADE)
+    user = models.ForeignKey("UserProfile", on_delete=models.CASCADE)
     site = models.ForeignKey("Website", on_delete=models.CASCADE)
     useful = models.BooleanField(default=True)
 

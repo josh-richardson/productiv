@@ -1,6 +1,10 @@
+import json
+
 from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -8,6 +12,8 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
+
 from backend.forms import UserForm
 
 
@@ -50,3 +56,10 @@ def login_user(request):
 
 def controlpanel(request):
     return render(request, 'backend/controlpanel.html', {})
+
+
+@csrf_exempt
+def website(request):
+    useful = User.objects.get(id=request.user.id).userprofile.sites.filter(website.url == request.POST.get("url")).first().useful
+    
+    return HttpResponse("success")
