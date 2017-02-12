@@ -1,0 +1,14 @@
+.name {
+    font-size: 4.75em;
+    display: block;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.skills {
+    font-size: 1.8em;
+    text-align: center;
+    display: block;
+    font-style: italic;
+    margin-top: 1%;
+}

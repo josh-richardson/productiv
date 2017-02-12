@@ -1,0 +1,82 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "/css/bootstrap.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "/css/custom.min.css" %}" rel="stylesheet">
+
+    <link href="{% static "/css/productiv.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "/css/font-awesome.css" %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">Productiv</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Help</a>
+            </li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://builtwithbootstrap.com/" target="_blank">Sign Up</a></li>
+            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Sign In</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">Productiv</span>
+                        <span class="skills">Augment your productivity, wither your wallet.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="icon-stack">
+                      <i class="icon-circle icon-stack-base"></i>
+                      <i class="icon-flag icon-light"></i>
+                    </span>
+                    <span class="icon-stack">
+                      <i class="icon-circle icon-stack-base"></i>
+                      <i class="icon-flag icon-light"></i>
+                    </span>
+
+                </div>
+                <div class="col-lg-6">
+                    <p>Some shit here</p>
+                </div>
+
+            </div>
+    </div>
+
+<script src="{% static "/js/jquery-3.1.1.js" %}"></script>
+<script src="{% static "/js/bootstrap.min.js" %}"></script>
+</body>
+</html>
